@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Casa do idoso de Pardinho</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#casa">Casa do Idoso</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#casa">INÍCIO</a></li>
+        <li><a href="#quem">QUEM SOMOS</a></li>
+        <li><a href="#galeria">GALERIA</a></li>
+        <li><a href="#trans">TRANSPARÊNCIA</a></li>
+        <li><a href="#contato">CONTATO</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="casa" class="container-fluid-1 bg-1 text-center">
+  <h3 class="margin">Casa do Idoso de Pardinho</h3>
+</div>
+
+<div id="quem" class="container-fluid bg-2 text-center">
+  <h3>Quem somos?</h3>
+  <p>A Casa do Idoso de Pardinho, fundada em 00/88/7777 abriga até 14 internos.</p>
+  <p>Sua função social é de trabalhar com idosos carentes (social e ...).</p>
+</div>
+  
+<div id="galeria" class="container-fluid bg-3 text-center">
+  <h2>Galeria</h2>
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <img src="images/no-image.png" class="img-responsive" alt="Image">
+    </div>
+    <div class="col-sm-4">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <img src="images/no-image.png" class="img-responsive" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <img src="images/no-image.png" class="img-responsive" alt="Image">
+    </div>
+  </div>
+</div>
+
+<div id="trans" class="container-fluid bg-2 text-center">
+  <h2>Transparência</h2>
+  <p>Aqui estão as receitas e despesas da Casa do Idoso.</p>
+  <button class="btn btn-default btn-lg">Clique aqui</button>
+</div>
+
+<div id="googleMap"></div>
+
+<footer id="contato" class="container-fluid bg-4">
+  <h2 class="text-center">Contato</h2>
+  <div class="row text-center">
+    <div class="container">
+      <p>Qualquer dúvida ou doação entre em contato.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Rua Sargento José Egídio do Amaral, 155</p>
+      <p><span class="glyphicon glyphicon-phone-alt"></span> +55 (14) 3886-1457</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> casadoidosopardinho@hotmail.com</p> 
+    </div>
+  </div>
+</footer>
+
+<script>
+function myMap() {
+var myCenter = new google.maps.LatLng(-23.082138, -48.372679);
+var mapProp = {center:myCenter, zoom:15, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var marker = new google.maps.Marker({position:myCenter});
+marker.setMap(map);
+}
+
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a").on('click', function(event) {
+
+   // Make sure this.hash has a value before overriding default behavior
+  if (this.hash !== "") {
+
+    // Prevent default anchor click behavior
+    event.preventDefault();
+
+    // Store hash
+    var hash = this.hash;
+
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 900, function(){
+
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOufaxFlzdUS1EvyZ8_bgULhY-yhHhfQs&callback=myMap"></script>
+
+</body>
+</html>

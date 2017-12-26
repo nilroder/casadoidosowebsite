@@ -1,0 +1,68 @@
+body {
+    font: 20px 'Montserrat', sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+}
+
+p {font-size: 16px;}
+
+.margin {
+    margin-bottom: 45px;
+    font-size: 50px;
+}
+
+.bg-1 {
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+ }
+
+.bg-2 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+}
+
+.bg-3 { 
+    background-color: #ffffff; /* White */
+    color: #555555;
+}
+
+.bg-4 { 
+    background-color: #2f2f2f;
+    color: #ffffff;
+}
+
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.container-fluid-1{
+    padding-top: 130px;
+    padding-bottom: 70px;
+}
+
+.navbar {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 1.42857143 !important;
+}
+
+.navbar-brand{
+    font-size: 20px;
+    letter-spacing: 0px;
+}
+
+.navbar-nav li a:hover {
+    color: #1abc9c !important;
+}
+
+#googleMap {
+    width: 100%; /* Span the entire width of the screen */
+    height: 400px; /* Set the height to 400 pixels */
+}
+
