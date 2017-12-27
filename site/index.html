@@ -29,7 +29,7 @@
         <li><a href="#gallery">GALERIA</a></li>
         <li><a href="#trans">TRANSPARÊNCIA</a></li>
         <li><a href="#contact">CONTATO</a></li>
-        <li><a href="#">LOGIN</a></li>
+        <li><a href="login.php">LOGIN</a></li>
       </ul>
     </div>
   </div>
@@ -39,30 +39,30 @@
 </div>
 
 <div id="about" class="container-fluid bg-2 text-center">
-  <h2>Quem somos?</h2>
-  <p>A Casa do Idoso de Pardinho, fundada em 11/02/1996 abriga até 14 internos.</p>
-  <p>Sua função social é de trabalhar com idosos carentes de forma social, psicológica e biológica.</p>
+    <h2>Quem somos?</h2>
+    <p>A Casa do Idoso de Pardinho, fundada em 11/02/1996 abriga até 14 internos.</p>
+    <p>Sua função social é de trabalhar com idosos carentes de forma social, psicológica e biológica.</p>
 </div>
   
 <div id="gallery" class="container-fluid bg-3 text-center">
-  <h2>Galeria</h2>
-  <div class="row">
-    <div class="col-sm-4">
-      <img src="images/foto1.jpeg" class="img-responsive" alt="Image">
+    <h2>Galeria</h2>
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="images/foto1.jpeg" class="img-responsive" alt="Image">
+      </div>
+      <div class="col-sm-4">
+        <img src="images/foto2.jpeg" class="img-responsive" alt="Image">
+      </div>
+      <div class="col-sm-4"> 
+        <img src="images/foto3.jpeg" class="img-responsive" alt="Image">
+      </div>
     </div>
-    <div class="col-sm-4">
-      <img src="images/foto2.jpeg" class="img-responsive" alt="Image">
-    </div>
-    <div class="col-sm-4"> 
-      <img src="images/foto3.jpeg" class="img-responsive" alt="Image">
-    </div>
-  </div>
 </div>
 
 <div id="trans" class="container-fluid bg-2 text-center">
   <h2>Transparência</h2>
   <p>Aqui estão as receitas e despesas da Casa do Idoso.</p>
-  <button class="btn btn-default btn-lg">Clique aqui</button>
+  <a target="_blank" id="btnFile" class="btn btn-default btn-lg">Clique aqui</a>
 </div>
 
 <div id="googleMap"></div>
@@ -112,7 +112,22 @@ $(document).ready(function(){
       });
     } // End if
   });
-})
+
+
+  // List all files 
+  $.getJSON("teste.php", "caminho=1", function( data ) {
+    var items = [];
+
+    $.each( data, function( i, value ) {
+      $.each(value, function( key, val ) {
+        items.push( val );
+      });
+    });
+
+    $("#btnFile").attr("href", items[items.length-1]);
+   });
+
+});
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOufaxFlzdUS1EvyZ8_bgULhY-yhHhfQs&callback=myMap"></script>

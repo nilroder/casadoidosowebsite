@@ -34,7 +34,7 @@ p {font-size: 16px;}
 .hero-section {
     background: url("images/home.jpeg") no-repeat center;
     background-size: cover;
-    height: 100vh;
+    height: 98vh;
     text-align: center;
     display: -webkit-flex;
     display: -ms-flexbox;
