@@ -62,7 +62,7 @@
         <title>Login</title>
         <style>
             .login-page {
-                width: 360px;
+                width: 500px;
                 padding: 8% 0 0;
                 margin: auto;
             }
@@ -71,7 +71,7 @@
                 position: relative;
                 z-index: 1;
                 background: #FFFFFF;
-                max-width: 360px;
+                max-width: 500px;
                 margin: 0 auto 100px;
                 padding: 45px;
                 text-align: center;
@@ -88,7 +88,7 @@
                 box-sizing: border-box;
                 font-size: 14px;
             }
-            .form button {
+            .form .button {
                 font-family: "Montserrat", sans-serif;
                 text-transform: uppercase;
                 outline: 0;
@@ -127,7 +127,7 @@
                         <label for="fileForm">Envie o arquivo</label>
                         <form action="" enctype="multipart/form-data" method="POST" class="form-horizontal" id="fileForm">
                             <div class="form-group">
-                                <label for="years" class="col-sm-2">Ano</label>
+                                <label for="years" class="col-md-2">Ano</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="years" name="years">
                                 </div>
