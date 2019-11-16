@@ -115,17 +115,22 @@ $(document).ready(function(){
 
 
   // List all files 
-  $.getJSON("teste.php", "caminho=1", function( data ) {
-    var items = [];
+  // $.getJSON("teste.php", "caminho=1", function( data ) {
+  //   var items = [];
 
-    $.each( data, function( i, value ) {
-      $.each(value, function( key, val ) {
-        items.push( val );
-      });
-    });
+  //   $.each( data, function( i, value ) {
+  //     $.each(value, function( key, val ) {
+  //       items.push( val );
+  //     });
+  //   });
 
-    $("#btnFile").attr("href", items[items.length-1]);
+  //   $("#btnFile").attr("href", items[items.length-1]);
+  //  });
+
+  $.get("4d576e9893e22ef962c9d95c13c521f7.google", function(data) {
+    $("#btnFile").attr("href", data);
    });
+
 
 });
 </script>

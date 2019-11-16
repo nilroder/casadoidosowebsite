@@ -12,20 +12,26 @@
     
     if ( isset($_POST['ok']) ):
 
-        $y = filter_input(INPUT_POST, "years", FILTER_SANITIZE_MAGIC_QUOTES);
+        $link = filter_input(INPUT_POST, "link", FILTER_SANITIZE_MAGIC_QUOTES);
         
-        if($y == ''):
-            $msg = 'Mês ou ano, não selecionados';
+        if($link == ''):
+            $msg = 'Link não informado';
         else:
-            $uploaddir = 'upload/'.$y.'/';
+            // $uploaddir = 'upload/'.$y.'/';
             
-            if (!file_exists($uploaddir)):
-                mkdir($uploaddir, 0777, true);
-            endif;
+            // if (!file_exists($uploaddir)):
+            //     mkdir($uploaddir, 0777, true);
+            // endif;
 
-            $uploadfile = $uploaddir.'casadoidoso-pardinho-transparencia-'.$y.'.pdf';
+            // $uploadfile = $uploaddir.'casadoidoso-pardinho-transparencia-'.$y.'.pdf';
 
-            if (move_uploaded_file($_FILES['files']['tmp_name'], $uploadfile)):
+            // if (move_uploaded_file($_FILES['files']['tmp_name'], $uploadfile)):
+            //     $msg = 'Upload realizado com sucesso';
+            // else:
+            //     $msg = 'Erro ao fazer upload. Tente novamente';
+            // endif;
+
+			if(User::writeGoogle($link)):
                 $msg = 'Upload realizado com sucesso';
             else:
                 $msg = 'Erro ao fazer upload. Tente novamente';
@@ -127,17 +133,17 @@
                         <label for="fileForm">Envie o arquivo</label>
                         <form action="" enctype="multipart/form-data" method="POST" class="form-horizontal" id="fileForm">
                             <div class="form-group">
-                                <label for="years" class="col-md-2">Ano</label>
+                                <label for="link" class="col-md-2">Link da pasta</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="years" name="years">
+                                    <input type="text" class="form-control" id="link" name="link">
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <div class="col-sm-12">
                                     <input type="file" id="files" name="files" accept="application/pdf"/>
                                 </div>
-                            </div>
+                            </div> -->
                             <input type="submit" name="ok" class="button" value="Enviar"/>
                         </form>
                     </div>

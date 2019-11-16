@@ -4,6 +4,7 @@ class User{
 	// Constantes
 	const USER = 'admin';
 	const FILE = '9a4fda645d1c0ec686e2bb8f6b843e8f.user';
+	const FILEGOOGLE = '4d576e9893e22ef962c9d95c13c521f7.google';
 
 	private $user;
 	private $pass;
@@ -59,6 +60,17 @@ class User{
 		if(md5($dataOld) === $data):
 			$handle = fopen(self::FILE, 'wb') or die('Cannot open file');
 			fwrite($handle, md5($dataNew));
+			fclose($handle);
+			return true;
+		else:
+			return false;
+		endif;
+	}
+
+	public function writeGoogle($data){
+		if($data):
+			$handle = fopen(self::FILEGOOGLE, 'wb') or die('Cannot open file');
+			fwrite($handle, $data);
 			fclose($handle);
 			return true;
 		else:
